@@ -4,8 +4,8 @@ static char *fulluseragent  = ""; /* Or override the whole user agent string */
 static char *scriptfile     = "~/.config/surf/script.js";
 static char *styledir       = "~/.config/surf/styles/";
 static char *certdir        = "~/.config/surf/certificates/";
-static char *cachedir       = "~/.cache/surf/";
-static char *cookiefile     = "~/.cache/surf/cookies.txt";
+static char *cachedir       = "~/.local/tmp/surf/";
+static char *cookiefile     = "~/.local/tmp/surf/cookies.txt";
 
 /* Webkit default features */
 /* Highest priority value will be used.

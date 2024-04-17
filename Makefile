@@ -53,20 +53,20 @@ dist: distclean
 	rm -rf surf-$(VERSION)
 
 install: all
-	mkdir -p $(BINPREFIX)
-	cp -f surf $(BINPREFIX)
-	chmod 700 $(BINPREFIX)/surf
+	mkdir -p $(DESTDIR)$(PREFIX)/bin
+	cp -f surf $(DESTDIR)$(PREFIX)/bin
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/surf
 	mkdir -p $(DESTDIR)$(LIBDIR)
 	cp -f $(WLIB) $(DESTDIR)$(LIBDIR)
 	for wlib in $(WLIB); do \
-	    chmod 600 $(DESTDIR)$(LIBDIR)/$$wlib; \
+	    chmod 644 $(DESTDIR)$(LIBDIR)/$$wlib; \
 	done
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
 	sed "s/VERSION/$(VERSION)/g" < surf.1 > $(DESTDIR)$(MANPREFIX)/man1/surf.1
-	chmod 600 $(DESTDIR)$(MANPREFIX)/man1/surf.1
+	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/surf.1
 
 uninstall:
-	rm -f $(BINPREFIX)/surf
+	rm -f $(DESTDIR)$(PREFIX)/bin/surf
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/surf.1
 	for wlib in $(WLIB); do \
 	    rm -f $(DESTDIR)$(LIBDIR)/$$wlib; \

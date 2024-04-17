@@ -5,9 +5,8 @@ VERSION = 2.1
 
 # paths
 PREFIX = /usr/local
-MANPREFIX = ~/.local/man
-BINPREFIX = ~/.local/bin
-LIBPREFIX = ~/.local/lib
+MANPREFIX = $(PREFIX)/share/man
+LIBPREFIX = $(PREFIX)/lib
 LIBDIR = $(LIBPREFIX)/surf
 
 X11INC = `pkg-config --cflags x11`
